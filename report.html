@@ -1614,7 +1614,7 @@ Make sure to keep track of the various features and conditions you tried before 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[225]:</div>
+<div class="prompt input_prompt">In&nbsp;[230]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">predictions_3</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -1636,8 +1636,6 @@ Make sure to keep track of the various features and conditions you tried before 
                 <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">passenger</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">passenger</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">and</span> <span class="n">passenger</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
                 <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-            <span class="c"># elif passenger[&#39;Pclass&#39;] == 2 and (passenger[&#39;Age&#39;] &lt;= 40 and passenger[&#39;Age&#39;] &gt;= 20) and passenger[&#39;Embarked&#39;] == &#39;C&#39;:</span>
-            <span class="c">#    predictions.append(0)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     
@@ -1666,7 +1664,7 @@ Make sure to keep track of the various features and conditions you tried before 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[226]:</div>
+<div class="prompt input_prompt">In&nbsp;[231]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
@@ -1697,6 +1695,22 @@ Make sure to keep track of the various features and conditions you tried before 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer</strong>: 80.13%</p>
+<ul>
+<li>What features did you look at?</li>
+</ul>
+<p>I looked at Age and Sex first since we started in first examples to use these features, then I extended feature list with Pclass and Parch, but at the end I achieved 80% rate without Parch feature, so for this example I did not look any further to increase the algorithm accuracy.</p>
+<ul>
+<li>Were certain features more informative than others?</li>
+</ul>
+<p>Yes. In my opinion Age and Sex are the most informative features, then comes Pclass and SibSp. I tried to use Fare but it turned out that passangers with more expensive tickets did not survive most as I expected, so in this case I did not find this feature much usefull.</p>
+<ul>
+<li>Which conditions did you use to split the survival outcomes in the data?</li>
+</ul>
+<p>I used Sex, Age and Pclass. I tried to use Parch and SubSp but they did not give expected results. I noticed that women in third class with age between 40 and 60 mostly did not survive but that men in first class (Pclass = 1), age between 20 and 40 mostly survived.</p>
+<ul>
+<li>How accurate are your predictions?</li>
+</ul>
+<p>Predictions have an accuracy of 80.13%.</p>
 
 </div>
 </div>
